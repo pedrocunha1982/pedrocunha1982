@@ -1,0 +1,179 @@
+{
+  "name": "Projeto Industrial ESP32/STM32",
+  "createdAt": "2024-12-20",
+  "items": [
+    {
+      "quantity": 1,
+      "name": "STM32F411 BlackPill",
+      "description": "Microcontrolador 32-bit ARM Cortex-M4",
+      "partNumber": "1920-STM32F411CEU6-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Cristal 8 MHz + capacitores",
+      "description": "Oscilador + 22pF x2",
+      "partNumber": "535-9125-1-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 6,
+      "name": "Botão Táctil Industrial",
+      "description": "Interruptor Push Button IP65",
+      "partNumber": "EG1851-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Display Nextion 5\"",
+      "description": "Interface UART serial inteligente",
+      "partNumber": "1597-1452-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "LED RGB Difuso",
+      "description": "LED 3 cores comum cátodo",
+      "partNumber": "754-1802-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Buzzer 95 dB",
+      "description": "Transdutor Piezo 5V",
+      "partNumber": "102-1380-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 3,
+      "name": "Termopar Tipo K",
+      "description": "Sensor temperatura alta (1000°C+)",
+      "partNumber": "SCB100-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 3,
+      "name": "MAX31855KASA+T",
+      "description": "Conversor termopar SPI",
+      "partNumber": "MAX31855KASA+TCT-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "DS18B20",
+      "description": "Sensor 1-Wire TO-92",
+      "partNumber": "DS18B20+T&R-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "ACS712 20A",
+      "description": "Módulo sensor de corrente",
+      "partNumber": "620-1726-1-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "SSR-40DA",
+      "description": "Relé de estado sólido 40A",
+      "partNumber": "125-1311-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Contator 25A 230V AC",
+      "description": "Contato auxiliar + bobina 230V",
+      "partNumber": "1246017-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 4,
+      "name": "TLP281",
+      "description": "Optoacoplador 4 canais",
+      "partNumber": "TLP281-4GB-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Fusível 20A + suporte",
+      "description": "Fusível tipo cartucho",
+      "partNumber": "36-4363-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "MOV 275V",
+      "description": "Proteção contra surtos",
+      "partNumber": "F6034-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "E-Stop Botão Emergência",
+      "description": "Interruptor NC c/ trava",
+      "partNumber": "480-1815-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "TPL5010",
+      "description": "Watchdog timer externo",
+      "partNumber": "296-46970-1-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "LM393",
+      "description": "Comparador analógico duplo",
+      "partNumber": "LM393N-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Sensor sobretemperatura",
+      "description": "Thermostato ou termofusível",
+      "partNumber": "CR421-NTR-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "LED Piloto 220V",
+      "description": "Indicador painel",
+      "partNumber": "9239356-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "ESP32 DevKitC",
+      "description": "WiFi + microSD",
+      "partNumber": "1528-2501-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Cartão microSD 8GB",
+      "description": "Classe 10 (industrial)",
+      "partNumber": "1528-1952-ND",
+      "supplier": "DigiKey"
+    },
+    {
+      "quantity": 1,
+      "name": "Soquete microSD",
+      "description": "Conector tipo push-push",
+      "partNumber": "HR1943TR-ND",
+      "supplier": "DigiKey"
+    }
+  ],
+  "summary": {
+    "totalItems": 23,
+    "totalQuantity": 33,
+    "categories": [
+      "Microcontroladores (STM32, ESP32)",
+      "Sensores de temperatura (Termopar, DS18B20)",
+      "Interface (Display Nextion, LEDs, Buzzer)",
+      "Potência (SSR, Contator, Fusível)",
+      "Proteção (MOV, E-Stop, Watchdog)",
+      "Periféricos (microSD, Optoacopladores)"
+    ]
+  }
+}

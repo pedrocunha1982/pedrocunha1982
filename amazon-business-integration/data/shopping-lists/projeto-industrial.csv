@@ -1,0 +1,24 @@
+Qtd,Nome,Descrição,Part Number DigiKey
+1,STM32F411 BlackPill,Microcontrolador 32-bit ARM Cortex-M4,1920-STM32F411CEU6-ND
+1,Cristal 8 MHz + capacitores,Oscilador + 22pF x2,535-9125-1-ND
+6,Botão Táctil Industrial,Interruptor Push Button IP65,EG1851-ND
+1,Display Nextion 5",Interface UART serial inteligente,1597-1452-ND
+1,LED RGB Difuso,LED 3 cores comum cátodo,754-1802-ND
+1,Buzzer 95 dB,Transdutor Piezo 5V,102-1380-ND
+3,Termopar Tipo K,Sensor temperatura alta (1000°C+),SCB100-ND
+3,MAX31855KASA+T,Conversor termopar SPI,MAX31855KASA+TCT-ND
+1,DS18B20,Sensor 1-Wire TO-92,DS18B20+T&R-ND
+1,ACS712 20A,Módulo sensor de corrente,620-1726-1-ND
+1,SSR-40DA,Relé de estado sólido 40A,125-1311-ND
+1,Contator 25A 230V AC,Contato auxiliar + bobina 230V,1246017-ND
+4,TLP281,Optoacoplador 4 canais,TLP281-4GB-ND
+1,Fusível 20A + suporte,Fusível tipo cartucho,36-4363-ND
+1,MOV 275V,Proteção contra surtos,F6034-ND
+1,E-Stop Botão Emergência,Interruptor NC c/ trava,480-1815-ND
+1,TPL5010,Watchdog timer externo,296-46970-1-ND
+1,LM393,Comparador analógico duplo,LM393N-ND
+1,Sensor sobretemperatura,Thermostato ou termofusível,CR421-NTR-ND
+1,LED Piloto 220V,Indicador painel,9239356-ND
+1,ESP32 DevKitC,WiFi + microSD,1528-2501-ND
+1,Cartão microSD 8GB,Classe 10 (industrial),1528-1952-ND
+1,Soquete microSD,Conector tipo push-push,HR1943TR-ND
