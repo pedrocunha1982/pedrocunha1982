@@ -21,11 +21,16 @@ O Home Assistant OS foi instalado com sucesso e está rodando no computador G9.
 - **Disco Secundário**: eMMC 58GB (reserva)
 
 **Rede:**
-- **IP**: 192.168.0.84
-- **Gateway**: 192.168.0.1
-- **Interface**: enp3s0 (Ethernet)
+- **IP**: 192.168.0.84 (DHCP - recomendado configurar IP fixo)
+- **Gateway**: 192.168.0.1 (TP-Link Archer BE700)
+- **Interface**: enp3s0 (Ethernet 1Gbps)
 - **MAC**: E0:51:08:1A:5A:31
 - **DNS**: 192.168.0.1
+
+**Roteador:**
+- **Modelo**: TP-Link Archer BE700 BE15000 Wi-Fi 7 Tri-Band
+- **MAC**: 88:7F:F0:07:AD:BB
+- **Recursos**: IoT Network, WPA3, 10G WAN, VPN, HomeShield
 
 **Discos Removidos (transferidos para NAS):**
 - Samsung SSD 990 EVO Plus 4TB
@@ -39,9 +44,11 @@ O Home Assistant OS foi instalado com sucesso e está rodando no computador G9.
 Instalação via Ubuntu Live USB gravando Home Assistant OS diretamente no SSD JUMPER 512G.
 
 ### Arquivos Disponíveis
-- **Guia Completo**: [INSTALL_HOMEASSISTANT.md](INSTALL_HOMEASSISTANT.md)
-- **Script Automatizado**: `install_homeassistant.sh`
+- **Guia de Instalação**: [INSTALL_HOMEASSISTANT.md](INSTALL_HOMEASSISTANT.md)
+- **Configuração do Roteador**: [CONFIGURACAO_ARCHER_BE700.md](CONFIGURACAO_ARCHER_BE700.md) ⭐
+- **Próximos Passos**: [PROXIMOS_PASSOS.md](PROXIMOS_PASSOS.md)
 - **Comandos Úteis**: [COMANDOS_UTEIS.md](COMANDOS_UTEIS.md)
+- **Script Automatizado**: `install_homeassistant.sh`
 - **Script de Verificação**: `verificar_discos_g9.sh`
 
 ### Para Reinstalar (se necessário)
@@ -59,6 +66,48 @@ sudo ./install_homeassistant.sh
 ```
 
 Para mais detalhes, consulte o [guia completo de instalação](INSTALL_HOMEASSISTANT.md).
+
+---
+
+## Configuração de Rede Recomendada
+
+### 1. IP Fixo para o G9
+
+O Home Assistant está atualmente com IP dinâmico (DHCP). **Recomenda-se configurar IP fixo** no roteador.
+
+**Via App Tether (mais fácil)**:
+1. Abra app Tether → **Tools** → **Advanced**
+2. **Network** → **DHCP Server** → **Address Reservation**
+3. Adicione:
+   - MAC: E0:51:08:1A:5A:31
+   - IP: 192.168.0.84
+   - Nome: Home Assistant G9
+
+**Guia completo**: [CONFIGURACAO_ARCHER_BE700.md](CONFIGURACAO_ARCHER_BE700.md)
+
+### 2. IoT Network (Altamente Recomendado)
+
+O Archer BE700 suporta **IoT Network** - uma rede Wi-Fi dedicada para dispositivos smart que:
+- ✅ Isola dispositivos IoT por segurança
+- ✅ Permite comunicação com Home Assistant
+- ✅ Usa WPA3 + HomeShield para proteção
+
+Configure em: **Wireless** → **IoT Network** (via app Tether ou web)
+
+**Arquitetura recomendada**:
+- **Rede Principal**: G9 (Home Assistant), PCs, celulares
+- **IoT Network**: Lâmpadas, sensores, câmeras, interruptores
+
+### 3. Recursos do Archer BE700
+
+- Wi-Fi 7 Tri-Band (15Gbps)
+- IoT Network dedicada
+- VPN Client & Server
+- QoS para priorizar tráfego
+- HomeShield (proteção de rede)
+- App Tether para gestão móvel
+
+**Guia completo**: [CONFIGURACAO_ARCHER_BE700.md](CONFIGURACAO_ARCHER_BE700.md)
 
 ---
 
