@@ -79,20 +79,25 @@ O Archer BE700 tem uma funcionalidade **IoT Network** perfeita para Home Assista
 5. Configure:
    - **Network Name (SSID)**: HomeAssistant_IoT
    - **Password**: [senha forte]
-   - **Band**: 2.4GHz (melhor compatibilidade IoT)
+   - **Band**: 2.4GHz ou 5GHz (veja recomendações abaixo)
    - **Security**: WPA3-Personal ou WPA2/WPA3
 6. Salve
 
+**Escolha da Banda**:
+- **2.4GHz**: Maior alcance, melhor compatibilidade com dispositivos antigos
+- **5GHz**: Mais rápido, menos interferência, ideal para câmeras e dispositivos modernos
+- **Recomendado**: 5GHz se todos dispositivos suportarem
+
 #### Via Interface Web:
 
-1. Acesse: **http://tplinkwifi.net**
+1. Acesse: **http://tplinkwifi.net** (ou http://192.168.0.1)
 2. Vá em: **Advanced** → **Wireless** → **IoT Network**
 3. **Enable IoT Network**: Checked
 4. Configure:
    - **Network Name**: HomeAssistant_IoT
    - **Password**: [senha forte]
-   - **Wireless Band**: 2.4GHz
-   - **Security**: WPA3-Personal
+   - **Wireless Band**: 2.4GHz ou 5GHz (escolha conforme dispositivos)
+   - **Security**: WPA3-Personal (ou WPA2/WPA3 para compatibilidade)
 5. **Allow IoT devices to communicate with devices on the main network**: Enabled
 6. Clique em **Save**
 

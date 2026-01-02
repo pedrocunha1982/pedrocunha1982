@@ -31,10 +31,21 @@ O Home Assistant OS foi instalado com sucesso e está rodando no computador G9.
 - **Modelo**: TP-Link Archer BE700 BE15000 Wi-Fi 7 Tri-Band
 - **MAC**: 88:7F:F0:07:AD:BB
 - **Recursos**: IoT Network, WPA3, 10G WAN, VPN, HomeShield
+- **Acesso**: http://192.168.0.1
 
-**Discos Removidos (transferidos para NAS):**
+**Switch 10 Gigabit** (em estoque - aguardando NAS):
+- **Modelo**: TP-Link Omada SX3008F
+- **Portas**: 8x 10G SFP+
+- **Tipo**: L2+ Smart Managed Switch
+- **Switching**: 160 Gbps / 119.04 Mpps
+- **Recursos**: Static Routing, QoS, VLAN, Link Aggregation, Omada SDN
+- **Consumo**: 15.46W (fanless)
+- **Status**: Não conectado (será usado quando NAS chegar)
+
+**Discos Removidos (serão usados no NAS futuro):**
 - Samsung SSD 990 EVO Plus 4TB
 - WD BLACK SN7100 4TB
+- **Uso futuro**: NAS com conexão 10G ao switch SX3008F
 
 ---
 
@@ -46,6 +57,7 @@ Instalação via Ubuntu Live USB gravando Home Assistant OS diretamente no SSD J
 ### Arquivos Disponíveis
 - **Guia de Instalação**: [INSTALL_HOMEASSISTANT.md](INSTALL_HOMEASSISTANT.md)
 - **Configuração do Roteador**: [CONFIGURACAO_ARCHER_BE700.md](CONFIGURACAO_ARCHER_BE700.md) ⭐
+- **Arquitetura de Rede**: [ARQUITETURA_REDE.md](ARQUITETURA_REDE.md) 🌐
 - **Próximos Passos**: [PROXIMOS_PASSOS.md](PROXIMOS_PASSOS.md)
 - **Comandos Úteis**: [COMANDOS_UTEIS.md](COMANDOS_UTEIS.md)
 - **Script Automatizado**: `install_homeassistant.sh`
