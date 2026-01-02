@@ -30,6 +30,22 @@ Documentação da infraestrutura de rede de alto desempenho com Home Assistant, 
 
 **Status**: Não conectado (aguardando NAS)
 
+### Servidor Home Assistant
+**GMKtec NucBox G9 Mini PC**
+- Modelo: NucBox G9
+- CPU: Intel N150 (4 cores, 3.6GHz, 6W TDP)
+- RAM: 12GB LPDDR5-4800 (soldada)
+- Storage: JUMPER 512G NVMe (slot M.2 #1) + 3 slots livres
+- Ethernet: **2x Intel I226-V 2.5 Gigabit** ⚡
+  - Porta 1 (enp3s0): Ativa em porta 1G do roteador
+  - Porta 2: Desconectada (disponível)
+- Cooling: Triple fan (silencioso)
+- Consumo: ~15-30W
+- IP: 192.168.0.84 (DHCP com reserva)
+- MAC: E0:51:08:1A:5A:31
+
+**Link Oficial**: [GMKtec G9](https://www.gmktec.com/products/intel-twin-lake-n150-dual-system-4-bay-nas-mini-pc-nucbox-g9)
+
 ---
 
 ## Arquitetura Atual (Sem NAS)
@@ -38,25 +54,31 @@ Documentação da infraestrutura de rede de alto desempenho com Home Assistant, 
 Internet
    │
    ▼
-┌─────────────────────────────────────┐
-│  TP-Link Archer BE700               │
-│  192.168.0.1                        │
-│  - 10G WAN: Internet                │
-│  - 2.5G LAN: Disponível             │
-│  - 1G LAN 1: G9 (Home Assistant)    │
-│  - 1G LAN 2: Disponível             │
-└──────────┬──────────────────────────┘
+┌────────────────────────────────────────┐
+│  TP-Link Archer BE700                  │
+│  192.168.0.1                           │
+│  - 10G WAN: Internet                   │
+│  - 2.5G LAN: ⚠️ DISPONÍVEL (usar!)     │
+│  - 1G LAN 1: G9 Porta 1 ⚠️ Limitando  │
+│  - 1G LAN 2: Disponível                │
+└──────────┬───────────────────────────┘
            │
-           │ 1 Gbps Ethernet
+           │ ⚠️ 1 Gbps (deveria ser 2.5G!)
            │
      ┌─────┴─────────────────┐
      │                       │
      ▼                       ▼
-  G9 (Home Assistant)    Dispositivos Wi-Fi
-  192.168.0.84           - IoT Network
-  (IP Fixo)              - Rede Principal
-  JUMPER 512G            - Guest Network
+  GMKtec G9              Dispositivos Wi-Fi
+  NucBox G9              - IoT Network
+  192.168.0.84           - Rede Principal
+  Dual 2.5G Ethernet     - Guest Network
+  ├─ Porta 1: Ativa (1G) ⚠️
+  └─ Porta 2: Livre 🆓
 ```
+
+**⚠️ IMPORTANTE**: G9 tem 2.5G mas está limitado a 1G!
+
+**Upgrade Recomendado**: Mover cabo do G9 da porta 1G para porta 2.5G do roteador.
 
 **Switch SX3008F**: Em estoque, será conectado quando NAS chegar
 
@@ -149,20 +171,30 @@ Internet
 ### Link Aggregation (LAG)
 
 Para redundância e velocidade:
-- 2x 10G entre Archer BE700 ↔ SX3008F = 20Gbps agregado
-- 2x 10G entre NAS ↔ SX3008F = 20Gbps (se NAS suportar)
+- **G9**: 2x 2.5G agregadas (LACP) = 5Gbps total + failover
+- **Roteador ↔ Switch**: 2x 10G = 20Gbps agregado
+- **NAS ↔ Switch**: 2x 10G = 20Gbps (se NAS suportar)
+
+**Nota**: G9 dual 2.5G permite link aggregation nativo!
 
 ---
 
 ## Equipamentos de Servidor
 
-### G9 - Home Assistant Server
-- **IP**: 192.168.0.84 (fixo via Address Reservation)
-- **Disco**: JUMPER 512G NVMe
+### G9 - GMKtec NucBox G9 (Home Assistant Server)
+- **Modelo**: GMKtec NucBox G9 Mini PC
+- **CPU**: Intel N150 (4 cores, 3.6GHz, 6W TDP)
+- **RAM**: 12GB LPDDR5-4800
+- **Storage**: JUMPER 512G NVMe (slot #1) + 3 slots M.2 livres
+- **Rede**: Dual 2.5G Ethernet (Intel I226-V)
+  - Porta 1 (enp3s0): Ativa - MAC E0:51:08:1A:5A:31
+  - Porta 2: Disponível
+- **IP**: 192.168.0.84 (DHCP com reserva)
 - **Sistema**: Home Assistant OS 13.2
-- **Rede**: 1Gbps Ethernet (enp3s0)
-- **MAC**: E0:51:08:1A:5A:31
+- **Cooling**: Triple fan (silencioso)
+- **Consumo**: ~15-30W
 - **Função**: Hub de automação residencial
+- **Specs Completas**: [GMKTEC_G9_SPECS.md](GMKTEC_G9_SPECS.md)
 
 ### NAS Futuro (Aguardando Hardware)
 - **Discos**: Samsung 990 EVO Plus 4TB + WD BLACK SN7100 4TB

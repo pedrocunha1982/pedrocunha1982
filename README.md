@@ -14,18 +14,29 @@ O Home Assistant OS foi instalado com sucesso e está rodando no computador G9.
 
 ### Especificações do G9
 
-**Hardware:**
-- **Disco Principal**: JUMPER 512G NVMe (nvme2n1)
-- **Sistema**: Home Assistant OS 13.2
-- **Espaço Total**: 512GB (6GB sistema + 506GB dados)
-- **Disco Secundário**: eMMC 58GB (reserva)
+**Modelo**: GMKtec NucBox G9 Mini PC
 
-**Rede:**
-- **IP**: 192.168.0.84 (DHCP - recomendado configurar IP fixo)
+**Hardware:**
+- **CPU**: Intel N150 (4 cores, até 3.6GHz, 6W TDP)
+- **RAM**: 12GB LPDDR5-4800 (soldada)
+- **Disco Principal**: JUMPER 512G NVMe (slot M.2 #1)
+- **Slots M.2 Livres**: 3x (capacidade total: até 16TB)
+- **Sistema**: Home Assistant OS 13.2
+- **Espaço Usado**: 6GB sistema + dados
+- **Espaço Disponível**: ~506GB
+- **Cooling**: Triple fan (2x SSD/RAM + 1x CPU grande)
+
+**Rede (Dual 2.5 Gigabit Ethernet):**
+- **Porta 1 (enp3s0)**: 2.5G (atualmente em porta 1G do roteador)
+  - IP: 192.168.0.84 (DHCP com reserva)
+  - MAC: E0:51:08:1A:5A:31
+  - Status: ✅ Ativa
+- **Porta 2**: 2.5G (não conectada - disponível para link aggregation/rede dedicada)
+- **Controlador**: 2x Intel I226-V
 - **Gateway**: 192.168.0.1 (TP-Link Archer BE700)
-- **Interface**: enp3s0 (Ethernet 1Gbps)
-- **MAC**: E0:51:08:1A:5A:31
 - **DNS**: 192.168.0.1
+- **Wi-Fi**: Wi-Fi 6 (disponível mas não em uso)
+- **Bluetooth**: 5.2
 
 **Roteador:**
 - **Modelo**: TP-Link Archer BE700 BE15000 Wi-Fi 7 Tri-Band
@@ -55,6 +66,7 @@ O Home Assistant OS foi instalado com sucesso e está rodando no computador G9.
 Instalação via Ubuntu Live USB gravando Home Assistant OS diretamente no SSD JUMPER 512G.
 
 ### Arquivos Disponíveis
+- **Especificações do G9**: [GMKTEC_G9_SPECS.md](GMKTEC_G9_SPECS.md) 🖥️
 - **Guia de Instalação**: [INSTALL_HOMEASSISTANT.md](INSTALL_HOMEASSISTANT.md)
 - **Configuração do Roteador**: [CONFIGURACAO_ARCHER_BE700.md](CONFIGURACAO_ARCHER_BE700.md) ⭐
 - **Arquitetura de Rede**: [ARQUITETURA_REDE.md](ARQUITETURA_REDE.md) 🌐
@@ -110,7 +122,34 @@ Configure em: **Wireless** → **IoT Network** (via app Tether ou web)
 - **Rede Principal**: G9 (Home Assistant), PCs, celulares
 - **IoT Network**: Lâmpadas, sensores, câmeras, interruptores
 
-### 3. Recursos do Archer BE700
+### 3. Aproveitar Dual 2.5G Ethernet do G9 ⚡
+
+O GMKtec G9 tem **duas portas 2.5 Gigabit**, mas atualmente está conectado em porta **1G** (desperdiçando 60% da velocidade!).
+
+**Status Atual**:
+- ⚠️ Porta 1: Conectada em porta 1G do roteador (limitada a 1 Gbps)
+- ⚠️ Porta 2: Desconectada
+
+**Upgrade Recomendado - Mover para Porta 2.5G** (FÁCIL):
+
+1. **Identifique a porta 2.5G LAN** do Archer BE700
+2. **Mova o cabo** da porta 1G para a porta 2.5G
+3. **Teste velocidade**: 1 Gbps → 2.5 Gbps (2.5x mais rápido!)
+
+**Benefícios**:
+- ✅ Backups 2.5x mais rápidos
+- ✅ Streaming local sem buffering
+- ✅ Gravações de câmeras mais responsivas
+- ✅ Custo: R$ 0 (só trocar porta!)
+
+**Futuro - Quando NAS Chegar** (Link Aggregation):
+- Porta 1: Conectada ao roteador (2.5G)
+- Porta 2: Conectada ao switch 10G (dedicada para storage)
+- Ou: Agregadas (LACP) = 5 Gbps total
+
+**Guia completo**: [GMKTEC_G9_SPECS.md](GMKTEC_G9_SPECS.md)
+
+### 4. Recursos do Archer BE700
 
 - Wi-Fi 7 Tri-Band (15Gbps)
 - IoT Network dedicada
