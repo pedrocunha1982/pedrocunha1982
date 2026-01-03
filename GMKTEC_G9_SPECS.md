@@ -46,17 +46,24 @@ O GMKtec NucBox G9 é um mini PC compacto projetado para uso como NAS/servidor, 
 
 **Controladores**: 2x Intel I226-V
 
-**Porta 1 (enp3s0)**:
-- **Velocidade**: 2.5 Gbps (atualmente conectada em porta 1G do roteador)
-- **MAC**: E0:51:08:1A:5A:31
+**Porta 1 (enp4s0)**:
+- **Velocidade**: 2.5 Gbps
+- **MAC**: `E0:51:D8:1A:5A:31`
+- **Status**: Disponível (pode estar desabilitada por padrão)
+- **Uso**: Backup/redundância
+
+**Porta 2 (enp5s0)** - EM USO:
+- **Velocidade**: 2.5 Gbps
+- **MAC**: `E0:51:D8:1A:5A:32`
 - **IP**: 192.168.0.84 (fixo via DHCP reservation)
 - **Status**: ✅ Conectada e ativa
 - **Uso**: Rede principal (Home Assistant)
 
-**Porta 2**:
-- **Velocidade**: 2.5 Gbps
-- **Status**: ⚠️ Não conectada
-- **Uso Futuro**: Link aggregation, rede dedicada IoT/Storage, ou redundância
+**IMPORTANTE**:
+- As interfaces podem estar desabilitadas por padrão!
+- Use `network info` no CLI para verificar
+- Use `network update <interface> --enabled=true --ipv4-method=auto` para habilitar
+- Ver [TROUBLESHOOTING_REDE_G9.md](TROUBLESHOOTING_REDE_G9.md) para solução de problemas
 
 **Performance**:
 - Velocidade individual: 2.5 Gbps (312.5 MB/s)

@@ -37,12 +37,14 @@ Documentação da infraestrutura de rede de alto desempenho com Home Assistant, 
 - RAM: 12GB LPDDR5-4800 (soldada)
 - Storage: JUMPER 512G NVMe (slot M.2 #1) + 3 slots livres
 - Ethernet: **2x Intel I226-V 2.5 Gigabit** ⚡
-  - Porta 1 (enp3s0): Ativa em porta 1G do roteador
-  - Porta 2: Desconectada (disponível)
+  - Porta 1 (enp4s0): MAC `E0:51:D8:1A:5A:31` - Disponível
+  - Porta 2 (enp5s0): MAC `E0:51:D8:1A:5A:32` - **EM USO**
 - Cooling: Triple fan (silencioso)
 - Consumo: ~15-30W
-- IP: 192.168.0.84 (DHCP com reserva)
-- MAC: E0:51:08:1A:5A:31
+- IP: 192.168.0.84 (DHCP com reserva para MAC da porta em uso)
+- MAC em uso: `E0:51:D8:1A:5A:32`
+
+**NOTA**: Ver [TROUBLESHOOTING_REDE_G9.md](TROUBLESHOOTING_REDE_G9.md) para solução de problemas de rede
 
 **Link Oficial**: [GMKtec G9](https://www.gmktec.com/products/intel-twin-lake-n150-dual-system-4-bay-nas-mini-pc-nucbox-g9)
 
