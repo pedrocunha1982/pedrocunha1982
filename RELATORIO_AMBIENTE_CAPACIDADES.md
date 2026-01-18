@@ -13,9 +13,9 @@
 | # | Hostname | IP | Tipo | Specs | Acesso Disponível |
 |---|----------|-----|------|-------|-------------------|
 | 1 | Mac Studio | 192.168.0.98 | macOS Tahoe 26.2 | M4 Max, 36GB RAM, RAID0 8TB (2x4TB M.2 Thunderbolt) | SSH, ARD, Terminal local |
-| 2 | Dell T7820 | (a definir) | Windows 10 Pro / Linux | 2x Xeon Gold 6148 (40c/80t), 96GB RAM, 2x1TB SSD, RTX A5000, Intel X520 10GbE | SSH, RDP, 10GbE SFP+ |
+| 2 | Dell T7820 | (a definir) | Windows 10 Pro / Linux | 2x Xeon Gold 6148 (40c/80t), 96GB RAM, 6TB M.2 (2+4TB), RTX A5000, Intel X520 10GbE | SSH, RDP, 10GbE SFP+ |
 | 3 | Switch TP-Link | (a definir) | Switch L2+ Managed | SX3008F, 8-Port 10GE SFP+ | Web UI, SNMP, API Omada |
-| 4 | PC #2 | (pendente) | (pendente) | (pendente) | (pendente) |
+| 4 | HP (modelo?) | (a definir) | (pendente) | 1TB M.2 via PCIe adapter + ? | (pendente) |
 | 5 | QNAP NAS | (pendente) | NAS Linux | (pendente) | SSH, Web UI, API QTS |
 
 ### Detalhes dos Equipamentos Identificados
@@ -33,7 +33,7 @@
 - **Modelo:** Dell Precision T7820
 - **CPUs:** 2x Intel Xeon Gold 6148 (20 cores / 40 threads cada) = **40 cores / 80 threads**
 - **Memória:** 96 GB DDR4 ECC
-- **Armazenamento:** 2x 1TB SSD
+- **Armazenamento:** 1x 2TB M.2 + 1x 4TB M.2 = **6TB total**
 - **GPU:** NVIDIA RTX A5000 (16GB GDDR6)
 - **Rede 10GbE:** Intel X520-DA2 Dual Port SFP+
 - **WiFi:** Intel AX200 WiFi 6 AX3000 + Bluetooth 5.2
@@ -49,8 +49,9 @@
 - **Device Key:** 1E73-A4FF-F54E-B6D9-A000
 - **Recursos:** VLAN, QoS, SNMP, Link Aggregation, Port Mirroring
 
-#### 4. PC #2
-*(Aguardando informações do usuário)*
+#### 4. HP (modelo a confirmar)
+- **Armazenamento:** 1TB M.2 NVMe (originalmente do Dell T7820) via adaptador PCIe
+- **Demais specs:** *(Aguardando informações)*
 
 #### 5. QNAP NAS
 *(Aguardando informações do usuário)*
