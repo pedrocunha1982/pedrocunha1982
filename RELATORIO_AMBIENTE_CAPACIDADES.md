@@ -10,53 +10,82 @@
 
 ### Tabela de Inventário
 
-| # | Hostname | IP | Tipo | Specs | Acesso Disponível |
-|---|----------|-----|------|-------|-------------------|
-| 1 | Mac Studio | 192.168.0.98 | macOS Tahoe 26.2 | M4 Max, 36GB RAM, RAID0 8TB (2x4TB M.2 Thunderbolt) | SSH, ARD, Terminal local |
-| 2 | Dell T7820 | (a definir) | Windows 10 Pro / Linux | 2x Xeon Gold 6148 (40c/80t), 96GB RAM, 6TB M.2, RTX A5000 + RTX 3090 (40GB VRAM), 10GbE | SSH, RDP, 10GbE SFP+ |
-| 3 | Switch TP-Link | (a definir) | Switch L2+ Managed | SX3008F, 8-Port 10GE SFP+ | Web UI, SNMP, API Omada |
-| 4 | HP (modelo?) | (a definir) | (pendente) | 1TB M.2 via PCIe adapter + ? | (pendente) |
-| 5 | QNAP NAS | (pendente) | NAS Linux | (pendente) | SSH, Web UI, API QTS |
+| # | Hostname | IP | Tipo | Specs Resumidos | Acesso Remoto |
+|---|----------|-----|------|-----------------|---------------|
+| 1 | Mac Studio | 192.168.0.98 | macOS Tahoe 26.2 | M4 Max, 36GB, 8TB RAID0 | SSH, ARD |
+| 2 | Dell T7820 | (a definir) | Windows 10 Pro | 2x Xeon 6148 (40c/80t), 96GB, 6TB, 2x GPU | SSH, RDP, 10GbE |
+| 3 | HP DL380 Gen9 | (via iLO) | Linux (a instalar) | 2x Xeon E5-2680v4 (28c/56t), 32GB, 24 baias | **iLO**, SSH |
+| 4 | Switch TP-Link | (a definir) | Switch L2+ | SX3008F, 8-Port 10GE SFP+ | Web UI, SNMP |
 
-### Detalhes dos Equipamentos Identificados
+### Totais do Ambiente
+
+| Recurso | Total |
+|---------|-------|
+| **CPU Cores** | 68 cores / 136 threads |
+| **RAM** | 164 GB |
+| **Storage SSD** | ~15 TB (+ 24 baias livres no HP) |
+| **GPU VRAM** | 40 GB |
+| **Rede** | 10GbE backbone |
+
+---
+
+### Detalhes dos Equipamentos
 
 #### 1. Mac Studio 2025
-- **Chip:** Apple M4 Max
-- **Memória:** 36 GB
-- **Armazenamento:** RAID 0 - 2x M.2 NVMe 4TB (8TB total) via Thunderbolt
-- **Sistema:** macOS Tahoe 26.2
-- **Serial:** NY4X79MQHJ
-- **IP atual:** 192.168.0.98 (DHCP)
-- **Rede:** WiFi AB 2,4 GHz
+| Spec | Valor |
+|------|-------|
+| Chip | Apple M4 Max |
+| Memória | 36 GB |
+| Armazenamento | RAID 0 - 2x 4TB M.2 NVMe = **8TB** (Thunderbolt) |
+| Sistema | macOS Tahoe 26.2 |
+| Serial | NY4X79MQHJ |
+| IP atual | 192.168.0.98 (DHCP, WiFi 2.4GHz) |
+| Acesso | SSH, Apple Remote Desktop |
 
 #### 2. Dell Precision T7820 Tower Workstation
-- **Modelo:** Dell Precision T7820
-- **CPUs:** 2x Intel Xeon Gold 6148 (20 cores / 40 threads cada) = **40 cores / 80 threads**
-- **Memória:** 96 GB DDR4 ECC
-- **Armazenamento:** 1x 2TB M.2 + 1x 4TB M.2 = **6TB total**
-- **GPU 1:** NVIDIA RTX A5000 (16GB GDDR6) - alimentação interna
-- **GPU 2:** NVIDIA RTX 3090 (24GB GDDR6X) - **fonte dedicada + riser PCIe**
-- **Total VRAM:** 40GB
-- **Rede 10GbE:** Intel X520-DA2 Dual Port SFP+
-- **WiFi:** Intel AX200 WiFi 6 AX3000 + Bluetooth 5.2
-- **Sistema:** Windows 10 Pro (potencial dual-boot Linux)
-- **Status:** Chegando ~Jan 21, 2026
+| Spec | Valor |
+|------|-------|
+| CPUs | 2x Intel Xeon Gold 6148 (20c/40t cada) = **40 cores / 80 threads** |
+| Memória | 96 GB DDR4 ECC |
+| Armazenamento | 1x 2TB M.2 + 1x 4TB M.2 = **6TB** |
+| GPU 1 | NVIDIA RTX A5000 (16GB) - alimentação interna |
+| GPU 2 | NVIDIA RTX 3090 (24GB) - **fonte dedicada + riser** |
+| Total VRAM | **40GB** |
+| Rede 10GbE | Intel X520-DA2 Dual Port SFP+ |
+| WiFi | Intel AX200 WiFi 6 AX3000 + BT 5.2 |
+| Sistema | Windows 10 Pro (potencial dual-boot Linux) |
+| Status | **Chegando ~Jan 21, 2026** |
 
-#### 3. Switch TP-Link Omada SX3008F
-- **Modelo:** SX3008F
-- **Tipo:** 8-Port 10GE SFP+ L2+ Managed Switch
-- **MAC:** EC-75-0C-4C-98-98
-- **S/N:** Y24C041000233
-- **Credenciais padrão:** admin / admin ⚠️
-- **Device Key:** 1E73-A4FF-F54E-B6D9-A000
-- **Recursos:** VLAN, QoS, SNMP, Link Aggregation, Port Mirroring
+#### 3. HP ProLiant DL380 Gen9
+| Spec | Valor |
+|------|-------|
+| Form Factor | 2U Rack, 24 baias SFF (2.5") |
+| CPUs | 2x Intel Xeon E5-2680v4 (14c/28t cada) = **28 cores / 56 threads** |
+| Memória | 32 GB DDR4 ECC (expansível) |
+| Armazenamento | 1TB M.2 via adaptador PCIe + **24 baias livres** |
+| RAID Controller | HP P440AR |
+| Rede | 4x RJ45 Gigabit |
+| Gerenciamento | **HP iLO** (Integrated Lights-Out) |
+| Serial | MXQ81601JK |
+| Status | **Chegando Jan 24-30, 2026** |
 
-#### 4. HP (modelo a confirmar)
-- **Armazenamento:** 1TB M.2 NVMe (originalmente do Dell T7820) via adaptador PCIe
-- **Demais specs:** *(Aguardando informações)*
+**Credenciais iLO:**
+| Campo | Valor |
+|-------|-------|
+| DNS Name | ILOMXQ81601JK |
+| User | Administrator |
+| Password | EEC05U4P |
 
-#### 5. QNAP NAS
-*(Aguardando informações do usuário)*
+#### 4. Switch TP-Link Omada SX3008F
+| Spec | Valor |
+|------|-------|
+| Modelo | SX3008F |
+| Tipo | 8-Port 10GE SFP+ L2+ Managed Switch |
+| MAC | EC-75-0C-4C-98-98 |
+| S/N | Y24C041000233 |
+| Credenciais padrão | admin / admin ⚠️ **TROCAR!** |
+| Device Key | 1E73-A4FF-F54E-B6D9-A000 |
+| Recursos | VLAN, QoS, SNMP, Link Aggregation, Port Mirroring |
 
 ---
 
@@ -64,33 +93,38 @@
 
 ### O que é o Claude Code?
 
-Claude Code é um **agente de CLI interativo** que opera em sessões sob demanda.
-**NÃO é um daemon/serviço persistente.**
+Claude Code é um **agente de CLI interativo** que opera em **sessões sob demanda**.
+**NÃO é um daemon/serviço persistente** - não rodo 24/7.
+
+### Limitação Atual
+
+**Estou rodando em um container sandbox isolado**, sem acesso direto à sua rede 192.168.0.x.
+
+Para acessar seus equipamentos, preciso de:
+1. **Você executar comandos** no Mac Studio e me passar resultados, OU
+2. **Túnel SSH/VPN** configurado para eu acessar remotamente
 
 ### Tabela de Skills Executáveis
 
-| Skill | Tipo | Ferramenta | Onde Executa | Limitações |
-|-------|------|------------|--------------|------------|
-| Executar comandos Bash | Execução | Bash tool | Host local | Timeout 10min, não-persistente |
-| Ler arquivos | Leitura | Read tool | Host local | Até 2000 linhas por chamada |
-| Escrever/Editar arquivos | Escrita | Write/Edit tools | Host local | Precisa ler antes de editar |
-| Buscar arquivos (glob) | Leitura | Glob tool | Host local | Pattern matching |
-| Buscar conteúdo (grep) | Leitura | Grep tool | Host local | Regex, ripgrep |
-| Buscar na web | Leitura | WebSearch/WebFetch | Internet | Apenas leitura |
-| SSH para outras máquinas | Execução | Bash + ssh | Remoto | Precisa de chaves/credenciais configuradas |
-| Chamar APIs REST | Leitura/Escrita | Bash + curl | Rede | Depende de autenticação |
-| SNMP queries | Leitura | Bash + snmpwalk/get | Rede | Se ferramentas instaladas |
-| Scripts Python/Node | Execução | Bash | Host local | Se runtime instalado |
+| Skill | Tipo | Executa Em | Limitações |
+|-------|------|------------|------------|
+| Comandos Bash | Execução | Host local | Timeout 10min |
+| Ler/Escrever arquivos | Leitura/Escrita | Host local | Até 2000 linhas |
+| Buscar arquivos/conteúdo | Leitura | Host local | Glob/Grep |
+| Buscar na web | Leitura | Internet | Apenas leitura |
+| SSH remoto | Execução | Rede | Se configurado |
+| APIs REST (curl) | Leitura/Escrita | Rede | Se autenticado |
+| SNMP queries | Leitura | Rede | Se ferramentas instaladas |
+| Scripts Python/Node | Execução | Host local | Se runtime instalado |
 
-### Skills que NÃO Possuo
+### O que NÃO Posso Fazer
 
-| Capacidade | Por que NÃO tenho | Solução Externa |
-|------------|-------------------|-----------------|
-| Execução contínua 24/7 | Sou sessão sob demanda | Cron, systemd, n8n, PM2 |
-| Armazenamento de histórico | Sem persistência entre sessões | InfluxDB, Prometheus, SQLite |
-| Alertas automáticos | Não monitoro continuamente | Alertmanager, Netdata, n8n |
-| Interface gráfica | CLI apenas | Grafana, Web dashboards |
-| Acesso direto a hardware | Sandbox do sistema | Ferramentas nativas do OS |
+| Capacidade | Motivo | Solução Externa |
+|------------|--------|-----------------|
+| Monitoramento 24/7 | Sessão sob demanda | Netdata, Prometheus, cron |
+| Armazenar histórico | Sem persistência | InfluxDB, SQLite |
+| Alertas automáticos | Não rodo em background | Alertmanager, n8n |
+| Acesso direto à sua rede | Estou em sandbox | Túnel SSH ou comandos locais |
 
 ---
 
@@ -100,144 +134,117 @@ Claude Code é um **agente de CLI interativo** que opera em sessões sob demanda
 
 | Requisito | Tenho? | Detalhes |
 |-----------|--------|----------|
-| Coletar sensores (CPU, GPU, temp, disco, fans) | ✅ PARCIAL | Posso executar comandos que coletam (powermetrics, iostat, etc), mas só quando acionado |
-| Rodar continuamente (24/7) | ❌ NÃO | Sou acionado por sessão, não sou um daemon |
-| Armazenar histórico | ❌ NÃO | Não tenho banco de dados próprio |
-| Gerar alertas por limite | ❌ NÃO | Não monitoro em background |
+| Coletar sensores | ✅ PARCIAL | Só quando acionado |
+| Rodar 24/7 | ❌ NÃO | Sou sessão sob demanda |
+| Armazenar histórico | ❌ NÃO | Sem banco de dados |
+| Gerar alertas | ❌ NÃO | Não rodo em background |
 
-### O que POSSO fazer para monitoramento:
-
-1. **Criar scripts de coleta** (Python, Bash) que você roda via cron
-2. **Configurar stack de monitoramento** (instalar Netdata, Prometheus, Grafana)
-3. **Analisar dados** quando você me chamar
-4. **Criar dashboards** e configurações
-5. **Diagnosticar problemas** sob demanda
-
-### O que PRECISA de ferramentas externas:
-
-| Função | Ferramenta Recomendada | Complexidade |
-|--------|----------------------|--------------|
-| Coleta contínua de métricas | **Netdata** (mais fácil) ou Prometheus + node_exporter | Baixa/Média |
-| Armazenamento de histórico | InfluxDB ou Prometheus TSDB | Média |
-| Dashboards visuais | **Grafana** ou Netdata built-in | Baixa |
-| Alertas | Alertmanager, Netdata alerts, ou **n8n** | Média |
-| Automação/Orquestração | **n8n** (visual) ou scripts + cron | Média |
-
-### Arquitetura Recomendada para Monitoramento 24/7
+### Arquitetura Recomendada
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    COLETA (em cada máquina)                 │
-├─────────────────────────────────────────────────────────────┤
-│  Mac Studio    │  QNAP NAS     │  PCs          │  Switch   │
-│  - Netdata     │  - Container  │  - Netdata    │  - SNMP   │
-│  - node_exp    │    Netdata    │               │           │
-└───────┬────────┴───────┬───────┴───────┬───────┴─────┬─────┘
-        │                │               │             │
-        └────────────────┴───────┬───────┴─────────────┘
-                                 │
-                    ┌────────────▼────────────┐
-                    │   AGREGAÇÃO/STORAGE     │
-                    │   Prometheus + InfluxDB │
-                    │   (no Mac Studio)       │
-                    └────────────┬────────────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              │                  │                  │
-     ┌────────▼────────┐ ┌──────▼──────┐ ┌────────▼────────┐
-     │    GRAFANA      │ │   ALERTAS   │ │   AUTOMAÇÃO     │
-     │   Dashboards    │ │ Alertmanager│ │      n8n        │
-     └─────────────────┘ └─────────────┘ └─────────────────┘
+├──────────────┬──────────────┬──────────────┬───────────────┤
+│  Mac Studio  │  Dell T7820  │  HP DL380    │  Switch       │
+│  - Netdata   │  - Netdata   │  - Netdata   │  - SNMP       │
+│              │  - nvidia-smi│  - iLO API   │               │
+└──────┬───────┴──────┬───────┴──────┬───────┴───────┬───────┘
+       │              │              │               │
+       └──────────────┴──────┬───────┴───────────────┘
+                             │
+                ┌────────────▼────────────┐
+                │   AGREGAÇÃO/STORAGE     │
+                │   Prometheus + InfluxDB │
+                │   (no Mac Studio)       │
+                └────────────┬────────────┘
+                             │
+          ┌──────────────────┼──────────────────┐
+          │                  │                  │
+ ┌────────▼────────┐ ┌──────▼──────┐ ┌────────▼────────┐
+ │    GRAFANA      │ │   ALERTAS   │ │   AUTOMAÇÃO     │
+ │   Dashboards    │ │ Alertmanager│ │      n8n        │
+ └─────────────────┘ └─────────────┘ └─────────────────┘
 ```
 
 ---
 
 ## PARTE D — SEGURANÇA E PERMISSÕES
 
-### Permissões Mínimas Necessárias
+### Alertas de Segurança
 
-#### Para o Mac Studio (host onde Claude Code roda):
+| Prioridade | Item | Ação |
+|------------|------|------|
+| 🔴 URGENTE | Senha do Switch = admin/admin | **TROCAR IMEDIATAMENTE** |
+| 🟡 MÉDIA | Credenciais iLO em texto | Guardar em local seguro |
+| 🟡 MÉDIA | iLO exposto na rede | Isolar em VLAN de gerenciamento |
 
-| Ação | Permissão | Risco |
-|------|-----------|-------|
-| Ler arquivos de sistema | Usuário normal | Baixo |
-| Ler sensores (powermetrics) | sudo | Médio |
-| Instalar software (brew) | Usuário normal | Baixo |
-| Modificar configs de sistema | sudo | Alto |
-| SSH para outras máquinas | Chave SSH configurada | Médio |
-
-#### Para acesso remoto a outras máquinas:
+### Permissões para Acesso Remoto
 
 | Destino | Método | Permissão Necessária |
 |---------|--------|---------------------|
-| QNAP NAS | SSH | Usuário com acesso SSH habilitado |
-| QNAP NAS | API QTS | Token de API ou credenciais |
-| Switch TP-Link | SNMP | Community string (read-only suficiente) |
-| Switch TP-Link | Web/API | Credenciais admin |
-| Outros Macs | SSH | Remote Login habilitado + chave SSH |
-| Outros Macs | ARD | Apple Remote Desktop configurado |
-
-### Matriz de Riscos
-
-| Ação | Risco se Comprometido | Recomendação |
-|------|----------------------|--------------|
-| Credenciais admin do switch em texto | Alto | Usar SNMP read-only ou vault |
-| SSH com chave sem passphrase | Médio | Usar ssh-agent com passphrase |
-| sudo sem senha | Alto | Limitar comandos específicos em sudoers |
-| API tokens em variáveis | Médio | Usar .env ou secrets manager |
-
-### Recomendações de Segurança
-
-1. **URGENTE:** Trocar senha padrão do Switch (admin/admin)
-2. Configurar SNMP v3 com autenticação (não v1/v2c)
-3. Criar usuário dedicado para automação com permissões limitadas
-4. Usar chaves SSH ao invés de senhas
-5. Não armazenar credenciais em scripts - usar variáveis de ambiente
+| HP DL380 | iLO | Administrator / EEC05U4P |
+| Switch | Web/SNMP | admin (trocar senha!) |
+| Dell T7820 | RDP/SSH | Criar usuário dedicado |
+| Mac Studio | SSH | Remote Login + chave SSH |
 
 ---
 
 ## RESUMO EXECUTIVO
 
-### ✅ O que posso fazer AGORA (quando acionado):
+### ✅ O que POSSO fazer (quando acionado):
 
-1. **Diagnosticar** qualquer máquina via SSH/comandos
-2. **Coletar** métricas de hardware (CPU, RAM, disco, temperatura)
-3. **Criar scripts** de automação e monitoramento
-4. **Configurar** ferramentas de monitoramento (Netdata, Prometheus, Grafana)
-5. **Analisar logs** e identificar problemas
-6. **Gerenciar** o switch via SNMP ou API (se configurado)
-7. **Automatizar** tarefas via scripts
-8. **Criar** dashboards e alertas (configuração)
+1. **Criar scripts** de coleta e automação
+2. **Configurar** Netdata, Prometheus, Grafana, n8n
+3. **Gerar comandos** para você executar localmente
+4. **Analisar** resultados e diagnosticar problemas
+5. **Documentar** configurações e procedimentos
 
 ### ❌ O que NÃO posso fazer sozinho:
 
-1. **Monitorar 24/7** - Sou sessão sob demanda
-2. **Armazenar histórico** - Não tenho persistência
-3. **Enviar alertas automáticos** - Não rodo em background
-4. **Acessar hardware diretamente** - Dependo de ferramentas do OS
+1. **Acessar sua rede** diretamente (estou em sandbox)
+2. **Monitorar 24/7** (sou sessão sob demanda)
+3. **Enviar alertas** automáticos
 
-### 🔧 Solução Integrada Recomendada:
+### 🔧 Próximos Passos Recomendados:
 
-Para ter monitoramento 24/7 completo, recomendo:
-
-| Componente | Ferramenta | Função |
-|------------|------------|--------|
-| Coleta de métricas | **Netdata** | Mais fácil, já vem com tudo |
-| Orquestração | **n8n** | Automação visual, webhooks |
-| Dashboards customizados | **Grafana** | Se precisar de mais controle |
-| Alertas | **Netdata** ou n8n | Notificações por email/Telegram |
-
-**Posso configurar tudo isso para você** - só preciso que me diga por onde começar.
+1. [ ] **URGENTE:** Trocar senha do switch (admin/admin)
+2. [ ] Quando HP chegar: acessar iLO via `https://<IP-iLO>` com credenciais acima
+3. [ ] Quando Dell chegar: configurar rede 10GbE e instalar drivers GPU
+4. [ ] Instalar Netdata em todas as máquinas para monitoramento
+5. [ ] Configurar IPs fixos ou reservas DHCP
 
 ---
 
-## PRÓXIMOS PASSOS
+## COMANDOS ÚTEIS
 
-1. [ ] Completar inventário (informações dos 2 PCs e QNAP)
-2. [ ] Definir IP fixo ou descobrir IP do switch
-3. [ ] Trocar senha padrão do switch
-4. [ ] Decidir stack de monitoramento
-5. [ ] Configurar coleta em cada máquina
+### Descobrir dispositivos na rede (rodar no Mac Studio):
+
+```bash
+# Scan da rede
+ping -c 1 192.168.0.255 && arp -a
+
+# Ou com nmap (se instalado)
+nmap -sn 192.168.0.0/24
+```
+
+### Acessar iLO do HP (quando chegar):
+
+```bash
+# Descobrir IP do iLO
+ping ILOMXQ81601JK
+
+# Ou via navegador
+https://<IP-do-iLO>
+# User: Administrator
+# Pass: EEC05U4P
+```
+
+### Verificar switch:
+
+```bash
+# Se SNMP habilitado
+snmpwalk -v2c -c public <IP-switch> 1.3.6.1.2.1.1
+```
 
 ---
 
