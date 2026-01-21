@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\TEUUSER\\Projetos",
+        "C:\\Users\\TEUUSER\\Documents",
+        "D:\\Trabalho"
+      ],
+      "env": {}
+    },
+    "ssh-servers": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@anthropic-ai/mcp-server-ssh"
+      ],
+      "env": {
+        "SSH_CONFIG_PATH": "C:\\Users\\TEUUSER\\.ssh\\config"
+      }
+    },
+    "remote-server-1": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@anthropic-ai/mcp-server-ssh",
+        "--host",
+        "192.168.1.100",
+        "--user",
+        "root",
+        "--private-key",
+        "C:\\Users\\TEUUSER\\.ssh\\id_rsa"
+      ],
+      "env": {}
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}

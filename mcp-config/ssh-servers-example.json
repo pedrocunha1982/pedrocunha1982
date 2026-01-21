@@ -1,0 +1,53 @@
+{
+  "description": "Exemplo de configuracao de servidores SSH para MCP",
+  "instructions": "Copia e adapta esta configuracao para o teu claude.json",
+
+  "mcpServers": {
+    "servidor-proxmox": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c", "npx", "-y", "@anthropic-ai/mcp-server-ssh",
+        "--host", "192.168.1.10",
+        "--user", "root",
+        "--private-key", "C:\\Users\\TEUUSER\\.ssh\\id_rsa"
+      ],
+      "env": {}
+    },
+    "servidor-nas": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c", "npx", "-y", "@anthropic-ai/mcp-server-ssh",
+        "--host", "192.168.1.20",
+        "--user", "admin",
+        "--private-key", "C:\\Users\\TEUUSER\\.ssh\\id_rsa",
+        "--remote-dir", "/volume1/dados"
+      ],
+      "env": {}
+    },
+    "servidor-web": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c", "npx", "-y", "@anthropic-ai/mcp-server-ssh",
+        "--host", "meuservidor.com",
+        "--port", "22",
+        "--user", "deploy",
+        "--private-key", "C:\\Users\\TEUUSER\\.ssh\\deploy_key"
+      ],
+      "env": {}
+    },
+    "servidor-database": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c", "npx", "-y", "@bytebase/dbhub",
+        "--dsn", "postgresql://readonly:PASSWORD@192.168.1.30:5432/producao"
+      ],
+      "env": {
+        "PGPASSWORD": "coloca-aqui-a-password"
+      }
+    }
+  }
+}
