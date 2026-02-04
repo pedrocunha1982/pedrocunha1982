@@ -6,9 +6,20 @@ O computador Dell esta ligado mas o ecra ficou preto/sem imagem. Abaixo estao os
 
 ---
 
-## Passo 1: Reset de Energia (Power Drain)
+## Passo 1: Desligar e Ligar (Power Cycle Simples)
 
-Este e o passo mais importante e resolve a maioria dos casos.
+Antes de tudo, tente o basico:
+
+1. **Desligue** o computador pelo botao de power (mantenha premido ate desligar)
+2. **Espere 30 segundos**
+3. **Ligue** novamente o computador
+4. Se o ecra continuar preto, avance para o Passo 2
+
+> Muitas vezes um simples "desliga e liga" resolve o problema — especialmente se o computador ficou em suspensao ou o sistema bloqueou.
+
+## Passo 2: Reset de Energia (Power Drain)
+
+Se o simples desligar e ligar nao resolveu, este passo forca um reset completo da energia interna.
 
 1. **Desligue** o computador completamente (mantenha o botao de power premido 10 segundos)
 2. **Desconecte** o cabo de energia da tomada
@@ -17,20 +28,20 @@ Este e o passo mais importante e resolve a maioria dos casos.
 5. Reconecte o cabo de energia (e bateria, se aplicavel)
 6. Ligue o computador
 
-## Passo 2: Verificar Cabos e Ligacoes
+## Passo 3: Verificar Cabos e Ligacoes
 
 - Verifique se o cabo de video (HDMI, DisplayPort, VGA) esta bem ligado
 - Tente um **cabo diferente** se possivel
 - Se tiver monitor externo, tente ligar a uma **porta de video diferente**
 - Verifique se o monitor esta ligado e na fonte de entrada correta
 
-## Passo 3: Monitor Externo / TV
+## Passo 4: Monitor Externo / TV
 
 - Ligue o Dell a um **monitor externo ou TV** usando HDMI
 - Se aparecer imagem no monitor externo, o problema e no ecra do portatil
 - Use a tecla **Fn + F8** (ou a tecla com icone de monitor) para alternar entre ecras
 
-## Passo 4: Verificar LEDs e Sons de Diagnostico
+## Passo 5: Verificar LEDs e Sons de Diagnostico
 
 Quando liga o Dell, observe:
 
@@ -46,7 +57,7 @@ Quando liga o Dell, observe:
 - **2 piscadelas ambar, 4 brancas** = Problema de RAM incompativel
 - **2 piscadelas ambar, 7 brancas** = Falha na placa grafica (GPU)
 
-## Passo 5: Recolocar a Memoria RAM
+## Passo 6: Recolocar a Memoria RAM
 
 1. Desligue o computador e desconecte da energia
 2. Abra a tampa traseira (portatil) ou a caixa (desktop)
@@ -55,12 +66,12 @@ Quando liga o Dell, observe:
 5. **Recoloque a RAM** com firmeza ate ouvir o "click"
 6. Tente ligar novamente
 
-## Passo 6: Reset da BIOS/CMOS
+## Passo 7: Reset da BIOS/CMOS
 
 - **Portatil Dell**: Desligue, remova a bateria, mantenha o botao power premido 30 seg
 - **Desktop Dell**: Abra a caixa, localize a pilha CR2032 na placa-mae, remova-a durante 5 minutos, recoloque-a
 
-## Passo 7: Diagnostico Integrado Dell (Built-in Self Test)
+## Passo 8: Diagnostico Integrado Dell (Built-in Self Test)
 
 1. Desligue o computador
 2. Pressione e mantenha a tecla **D** enquanto liga o computador
@@ -76,7 +87,7 @@ Se entrou no menu de boot, selecionou o diagnostico (SupportAssist) e o ecra fic
 - Tente o **teste LCD direto com a tecla D** (descrito acima) — este teste e mais basico e funciona mesmo quando o diagnostico completo falha
 - Se nem o teste com a tecla D mostrar imagem, o problema e provavelmente de hardware (ecra ou GPU)
 
-## Passo 8: Modo Seguro (Se o Windows carrega)
+## Passo 9: Modo Seguro (Se o Windows carrega)
 
 Se o computador parece estar a carregar o Windows (ouve sons, disco a trabalhar):
 
@@ -92,14 +103,15 @@ Se o computador parece estar a carregar o Windows (ouve sons, disco a trabalhar)
 
 | # | Acao | Tempo |
 |---|------|-------|
-| 1 | Reset de energia (power drain) | 2 min |
-| 2 | Verificar cabos | 1 min |
-| 3 | Testar monitor externo | 2 min |
-| 4 | Observar LEDs/beeps | 1 min |
-| 5 | Recolocar RAM | 10 min |
-| 6 | Reset BIOS/CMOS | 5 min |
-| 7 | Teste LCD integrado (tecla D) | 2 min |
-| 8 | Modo seguro | 5 min |
+| 1 | Desligar e ligar (power cycle) | 1 min |
+| 2 | Reset de energia (power drain) | 2 min |
+| 3 | Verificar cabos | 1 min |
+| 4 | Testar monitor externo | 2 min |
+| 5 | Observar LEDs/beeps | 1 min |
+| 6 | Recolocar RAM | 10 min |
+| 7 | Reset BIOS/CMOS | 5 min |
+| 8 | Teste LCD integrado (tecla D) | 2 min |
+| 9 | Modo seguro | 5 min |
 
 ---
 
