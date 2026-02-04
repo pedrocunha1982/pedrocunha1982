@@ -67,6 +67,15 @@ Quando liga o Dell, observe:
 3. Isto inicia o teste de diagnostico do ecra/LCD
 4. Se aparecerem cores no ecra, o painel LCD esta funcional
 
+### E se escolhi Diagnostico no Boot e o ecra ficou preto?
+
+Se entrou no menu de boot, selecionou o diagnostico (SupportAssist) e o ecra ficou totalmente preto:
+
+- **Espere no maximo 2-3 minutos** — o diagnostico pode demorar a iniciar
+- Se continuar preto apos 3 minutos, **force o desligar** (botao power 10 segundos)
+- Tente o **teste LCD direto com a tecla D** (descrito acima) — este teste e mais basico e funciona mesmo quando o diagnostico completo falha
+- Se nem o teste com a tecla D mostrar imagem, o problema e provavelmente de hardware (ecra ou GPU)
+
 ## Passo 8: Modo Seguro (Se o Windows carrega)
 
 Se o computador parece estar a carregar o Windows (ouve sons, disco a trabalhar):
