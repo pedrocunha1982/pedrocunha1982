@@ -120,13 +120,20 @@ O computador tentou recuperar a BIOS mas nao encontrou uma imagem valida. Precis
 
 > **Dica**: Se nao funcionar a primeira vez, tenta noutra porta USB e repete.
 
-#### Script automatico para preparar a pen USB (Windows):
+#### Script automatico para preparar a pen USB:
 
-Em vez de fazer tudo manualmente, podes usar o script **`preparar_pen_bios.bat`** incluido neste repositorio. Basta:
+Em vez de fazer tudo manualmente, podes usar os scripts incluidos neste repositorio:
 
+**Windows** — `preparar_pen_bios.bat`:
 1. Descarregar o ficheiro `preparar_pen_bios.bat` para o outro computador
 2. Clicar direito > **Executar como administrador**
 3. Seguir as instrucoes no ecra — ele formata a pen, abre o site da Dell, e renomeia tudo automaticamente
+
+**macOS** — `preparar_pen_bios_mac.sh`:
+1. Descarregar o ficheiro `preparar_pen_bios_mac.sh` para o Mac
+2. Abrir o **Terminal** (Aplicacoes > Utilitarios > Terminal)
+3. Executar: `chmod +x preparar_pen_bios_mac.sh && ./preparar_pen_bios_mac.sh`
+4. Seguir as instrucoes — ele formata a pen em FAT32, abre o site da Dell, copia e renomeia o ficheiro, e ejeta a pen automaticamente
 
 ## Passo 9: Diagnostico Integrado Dell (Built-in Self Test)
 
