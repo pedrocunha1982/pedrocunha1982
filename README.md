@@ -120,6 +120,14 @@ O computador tentou recuperar a BIOS mas nao encontrou uma imagem valida. Precis
 
 > **Dica**: Se nao funcionar a primeira vez, tenta noutra porta USB e repete.
 
+#### Script automatico para preparar a pen USB (Windows):
+
+Em vez de fazer tudo manualmente, podes usar o script **`preparar_pen_bios.bat`** incluido neste repositorio. Basta:
+
+1. Descarregar o ficheiro `preparar_pen_bios.bat` para o outro computador
+2. Clicar direito > **Executar como administrador**
+3. Seguir as instrucoes no ecra — ele formata a pen, abre o site da Dell, e renomeia tudo automaticamente
+
 ## Passo 9: Diagnostico Integrado Dell (Built-in Self Test)
 
 1. Desligue o computador
