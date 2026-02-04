@@ -71,7 +71,20 @@ Quando liga o Dell, observe:
 - **Portatil Dell**: Desligue, remova a bateria, mantenha o botao power premido 30 seg
 - **Desktop Dell**: Abra a caixa, localize a pilha CR2032 na placa-mae, remova-a durante 5 minutos, recoloque-a
 
-## Passo 8: Diagnostico Integrado Dell (Built-in Self Test)
+## Passo 8: Recuperacao da BIOS (Ctrl + Esc)
+
+Se suspeita que a BIOS ficou corrompida (ex: apos atualizacao falhada ou corte de energia):
+
+1. **Desligue** o computador completamente
+2. Mantenha premidas as teclas **Ctrl + Esc** ao mesmo tempo
+3. **Enquanto mantem premidas**, ligue o computador pelo botao de power
+4. **Solte as teclas** quando o LED piscar ou aparecer uma barra de progresso
+5. Aguarde — o Dell vai tentar recuperar/reflash da BIOS automaticamente
+6. O computador reinicia sozinho quando terminar
+
+> **Nota**: Este processo pode demorar alguns minutos. Nao desligue o computador durante a recuperacao.
+
+## Passo 9: Diagnostico Integrado Dell (Built-in Self Test)
 
 1. Desligue o computador
 2. Pressione e mantenha a tecla **D** enquanto liga o computador
@@ -87,7 +100,7 @@ Se entrou no menu de boot, selecionou o diagnostico (SupportAssist) e o ecra fic
 - Tente o **teste LCD direto com a tecla D** (descrito acima) — este teste e mais basico e funciona mesmo quando o diagnostico completo falha
 - Se nem o teste com a tecla D mostrar imagem, o problema e provavelmente de hardware (ecra ou GPU)
 
-## Passo 9: Modo Seguro (Se o Windows carrega)
+## Passo 10: Modo Seguro (Se o Windows carrega)
 
 Se o computador parece estar a carregar o Windows (ouve sons, disco a trabalhar):
 
@@ -110,8 +123,9 @@ Se o computador parece estar a carregar o Windows (ouve sons, disco a trabalhar)
 | 5 | Observar LEDs/beeps | 1 min |
 | 6 | Recolocar RAM | 10 min |
 | 7 | Reset BIOS/CMOS | 5 min |
-| 8 | Teste LCD integrado (tecla D) | 2 min |
-| 9 | Modo seguro | 5 min |
+| 8 | Recuperacao da BIOS (Ctrl+Esc) | 5 min |
+| 9 | Teste LCD integrado (tecla D) | 2 min |
+| 10 | Modo seguro | 5 min |
 
 ---
 
