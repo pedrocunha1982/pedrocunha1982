@@ -56,6 +56,7 @@ Quando liga o Dell, observe:
 - **2 piscadelas ambar, 3 brancas** = Problema de memoria RAM
 - **2 piscadelas ambar, 4 brancas** = Problema de RAM incompativel
 - **2 piscadelas ambar, 7 brancas** = Falha na placa grafica (GPU)
+- **3 piscadelas ambar, 3 brancas** = Falha na recuperacao da BIOS (imagem nao encontrada)
 
 ## Passo 6: Recolocar a Memoria RAM
 
@@ -83,6 +84,19 @@ Se suspeita que a BIOS ficou corrompida (ex: apos atualizacao falhada ou corte d
 6. O computador reinicia sozinho quando terminar
 
 > **Nota**: Este processo pode demorar alguns minutos. Nao desligue o computador durante a recuperacao.
+
+### Se aparecer o codigo 3 ambar + 3 brancas (BIOS nao encontrada):
+
+O computador tentou recuperar a BIOS mas nao encontrou uma imagem valida. Precisa de criar uma pen USB de recuperacao:
+
+1. Noutro computador, va a **dell.com/support**
+2. Introduza o **Service Tag** do seu Dell (esta na etiqueta por baixo/atras do computador)
+3. Faca download do ficheiro de **BIOS** (ficheiro .exe)
+4. Formate uma **pen USB em FAT32**
+5. Copie o ficheiro .exe para a **raiz da pen** e renomeie para **BIOS_IMG.rcv**
+6. Insira a pen USB no Dell
+7. Repita o procedimento **Ctrl + Esc** enquanto liga o computador
+8. O Dell deve detectar a pen e iniciar a recuperacao automaticamente
 
 ## Passo 9: Diagnostico Integrado Dell (Built-in Self Test)
 
