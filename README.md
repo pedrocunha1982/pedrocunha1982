@@ -87,16 +87,38 @@ Se suspeita que a BIOS ficou corrompida (ex: apos atualizacao falhada ou corte d
 
 ### Se aparecer o codigo 3 ambar + 3 brancas (BIOS nao encontrada):
 
-O computador tentou recuperar a BIOS mas nao encontrou uma imagem valida. Precisa de criar uma pen USB de recuperacao:
+O computador tentou recuperar a BIOS mas nao encontrou uma imagem valida. Precisa de criar uma **pen USB de recuperacao** noutro computador.
 
-1. Noutro computador, va a **dell.com/support**
-2. Introduza o **Service Tag** do seu Dell (esta na etiqueta por baixo/atras do computador)
-3. Faca download do ficheiro de **BIOS** (ficheiro .exe)
-4. Formate uma **pen USB em FAT32**
-5. Copie o ficheiro .exe para a **raiz da pen** e renomeie para **BIOS_IMG.rcv**
-6. Insira a pen USB no Dell
-7. Repita o procedimento **Ctrl + Esc** enquanto liga o computador
-8. O Dell deve detectar a pen e iniciar a recuperacao automaticamente
+#### O que precisas:
+- Uma **pen USB** (qualquer tamanho, minimo 1GB)
+- Acesso a **outro computador** com internet
+- O **Service Tag** do teu Dell (etiqueta por baixo/atras do computador, tipo: ABC1234)
+
+#### Passo a passo (no outro computador):
+
+1. Vai a **https://www.dell.com/support/home** e clica em "Identificar produto" ou introduz o Service Tag
+2. Clica em **"Controladores e transferencias"** (Drivers & Downloads)
+3. Em Categoria, filtra por **"BIOS"**
+4. Faz download do ficheiro mais recente (e um **.exe**)
+5. Insere a pen USB e **formata em FAT32**:
+   - Windows: clica direito na pen > Formatar > seleciona FAT32 > Iniciar
+6. Copia o ficheiro .exe para a **raiz da pen** (nao dentro de pastas)
+7. **Renomeia** o ficheiro: muda a extensao de `.exe` para `.rcv`
+   - Exemplo: `Inspiron_5520_BIOS_1.15.0.exe` → **`BIOS_IMG.rcv`**
+
+#### Agora no Dell avariado:
+
+1. Com o Dell **desligado**, insere a pen USB
+2. Usa uma porta **USB preta (2.0)** em vez de azul (3.0) — funciona melhor
+3. Usa o **teclado integrado** do portatil (nao externo)
+4. Mantem premido **Ctrl + Esc** e liga o computador pelo botao power
+5. Mantem premido durante **pelo menos 30 segundos**
+6. Se aparecer um menu de recuperacao, seleciona o caminho da pen (raiz "/")
+7. Aguarda — a barra de progresso pode demorar varios minutos
+8. **NAO desligue o computador** durante o processo
+9. O Dell reinicia sozinho quando terminar
+
+> **Dica**: Se nao funcionar a primeira vez, tenta noutra porta USB e repete.
 
 ## Passo 9: Diagnostico Integrado Dell (Built-in Self Test)
 
