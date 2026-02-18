@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  ============================================================================
+  PERFIL PADRAO - DISPOSITIVOS CLIENTE APPLE
+  ============================================================================
+  Instale em cada device (MacBook, iPhone, iPad) para configurar:
+    - Conexao automatica ao Mac Studio (File Sharing)
+    - CalDAV / CardDAV (calendarios e contatos compartilhados)
+    - Restricoes de seguranca basicas
+    - Wi-Fi da rede local
+
+  Como instalar:
+    iPhone/iPad: AirDrop ou email > Settings > Profile Downloaded > Install
+    Mac: Duplo-clique > System Settings > Profiles > Install
+  ============================================================================
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+
+        <!-- ============================================ -->
+        <!-- WI-FI REDE LOCAL (ajuste SSID e senha)      -->
+        <!-- ============================================ -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.wifi.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.studio.wifi.local</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+            <key>PayloadDisplayName</key>
+            <string>Wi-Fi Studio</string>
+            <key>PayloadDescription</key>
+            <string>Conexao automatica a rede Wi-Fi do studio</string>
+            <key>AutoJoin</key>
+            <true/>
+            <key>CaptiveBypass</key>
+            <false/>
+            <key>EncryptionType</key>
+            <string>WPA3</string>
+            <key>HIDDEN_NETWORK</key>
+            <false/>
+            <key>IsHotspot</key>
+            <false/>
+            <!-- EDITE: Nome da sua rede Wi-Fi -->
+            <key>SSID_STR</key>
+            <string>SUA_REDE_WIFI</string>
+            <!-- EDITE: Senha da rede -->
+            <key>Password</key>
+            <string>SUA_SENHA_WIFI</string>
+            <key>ProxyType</key>
+            <string>None</string>
+        </dict>
+
+        <!-- ============================================ -->
+        <!-- RESTRICOES DE SEGURANCA BASICAS             -->
+        <!-- ============================================ -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.security.passcode</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.studio.security.passcode</string>
+            <key>PayloadUUID</key>
+            <string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
+            <key>PayloadDisplayName</key>
+            <string>Seguranca - Codigo</string>
+            <key>PayloadDescription</key>
+            <string>Exige codigo de acesso no device</string>
+            <key>allowSimple</key>
+            <false/>
+            <key>forcePIN</key>
+            <true/>
+            <key>maxInactivity</key>
+            <integer>5</integer>
+            <key>minLength</key>
+            <integer>6</integer>
+        </dict>
+
+    </array>
+
+    <!-- ============================================ -->
+    <!-- METADADOS DO PERFIL                         -->
+    <!-- ============================================ -->
+    <key>PayloadDisplayName</key>
+    <string>Studio - Config Padrao Dispositivo</string>
+    <key>PayloadDescription</key>
+    <string>Configuracao padrao para dispositivos do studio. Inclui Wi-Fi, seguranca e conectividade com o servidor Mac Studio.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.studio.device.config</string>
+    <key>PayloadOrganization</key>
+    <string>Studio Pedro</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>C3D4E5F6-A7B8-9012-CDEF-123456789012</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
