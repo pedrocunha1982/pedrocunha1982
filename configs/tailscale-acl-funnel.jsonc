@@ -1,0 +1,13 @@
+// Adicionar ao ACL do Tailscale Admin Console
+// https://login.tailscale.com/admin/acls/file
+//
+// Este bloco habilita o Tailscale Funnel para todos os membros da tailnet
+// Adicione DENTRO do objeto principal do ACL, antes do ultimo }
+
+"nodeAttrs": [
+  {
+    // Permite que qualquer membro da tailnet use Funnel
+    "target": ["autogroup:member"],
+    "attr":   ["funnel"]
+  }
+]

@@ -1,0 +1,16 @@
+# Configuracao do Add-on Tailscale no Home Assistant
+# Copie estas opcoes para a aba Configuration do add-on
+#
+# Funcionalidade: Tailscale Funnel
+# Resultado: HA acessivel em https://homeassistant.<tailnet>.ts.net
+
+share_homeassistant: funnel
+share_on_port: 443
+advertise_exit_node: false
+advertise_routes:
+  - local_subnets
+accept_dns: true
+accept_routes: true
+userspace_networking: true
+taildrop: true
+log_level: info
